@@ -89,8 +89,9 @@ img {
   position: fixed;
   z-index: 8;
   left: clamp(18px, 4vw, 54px);
-  bottom: clamp(22px, 6vw, 76px);
-  max-width: min(560px, calc(100vw - 36px));
+  top: clamp(112px, 14vh, 154px);
+  bottom: auto;
+  max-width: min(600px, calc(100vw - 36px));
   pointer-events: none;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
@@ -107,8 +108,13 @@ img {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 500;
-  font-size: clamp(34px, 6.6vw, 86px);
-  line-height: 0.98;
+  font-size: clamp(32px, 6vw, 78px);
+  line-height: 1.08;
+  word-break: keep-all;
+}
+
+.intro h1 span {
+  display: block;
 }
 
 .venue-panels {
@@ -175,6 +181,7 @@ img {
   color: #fffaf2;
   transform: translateY(28px);
   transition: transform 420ms ease;
+  overflow-wrap: anywhere;
 }
 
 .panel-copy .eyebrow {
@@ -185,11 +192,10 @@ img {
 
 .panel-copy strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(26px, 3.7vw, 58px);
+  font-size: clamp(26px, 3.2vw, 54px);
   font-weight: 500;
-  line-height: 0.94;
-  width: min-content;
-  min-width: 190px;
+  line-height: 1.02;
+  max-width: 100%;
 }
 
 .panel-copy span:not(.eyebrow) {
@@ -257,6 +263,50 @@ img {
   color: inherit;
 }
 
+.detail-menu {
+  position: fixed;
+  top: 76px;
+  left: clamp(18px, 5vw, 64px);
+  right: clamp(18px, 5vw, 64px);
+  z-index: 19;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px;
+  border: 1px solid rgba(128, 118, 101, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.66);
+  color: inherit;
+  backdrop-filter: blur(18px);
+  scrollbar-width: none;
+}
+
+.detail-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.detail-menu a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0.76;
+  transition: background 180ms ease, opacity 180ms ease;
+}
+
+.detail-menu a:hover,
+.detail-menu a:focus-visible,
+.detail-menu a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.58);
+  opacity: 1;
+}
+
 .back-link {
   font-size: 13px;
   text-transform: uppercase;
@@ -291,6 +341,172 @@ img {
   font-size: 14px;
 }
 
+.detail-content {
+  display: grid;
+  gap: clamp(24px, 4vw, 44px);
+  padding: clamp(48px, 7vw, 88px) clamp(18px, 5vw, 70px) clamp(56px, 8vw, 96px);
+}
+
+.info-page-main {
+  min-height: 100vh;
+  padding-top: 136px;
+}
+
+.info-page-main .detail-content {
+  min-height: calc(100vh - 136px);
+  align-content: center;
+}
+
+.single-info {
+  grid-template-columns: minmax(0, 0.58fr) minmax(320px, 0.42fr);
+  align-items: start;
+}
+
+.single-info .info-card {
+  min-height: auto;
+}
+
+.single-info .map-card {
+  grid-row: auto;
+}
+
+.single-info .section-image {
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.single-info .section-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.detail-content [id],
+#overview {
+  scroll-margin-top: 136px;
+}
+
+.info-block {
+  display: grid;
+  gap: 16px;
+  max-width: 860px;
+}
+
+.info-block h2,
+.info-card h2 {
+  font-size: clamp(28px, 4.5vw, 54px);
+  line-height: 1.08;
+  word-break: keep-all;
+}
+
+.info-block p {
+  max-width: 760px;
+  color: color-mix(in srgb, currentColor 72%, transparent);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.info-card {
+  min-height: 260px;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, currentColor 5%, transparent);
+}
+
+.info-card p,
+.detail-list {
+  color: color-mix(in srgb, currentColor 72%, transparent);
+}
+
+.info-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.info-list div {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.info-list dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.info-list dd {
+  margin: 0;
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.detail-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+.map-card {
+  grid-row: span 2;
+}
+
+.map-preview {
+  min-height: 220px;
+  display: grid;
+  align-content: end;
+  gap: 8px;
+  padding: 22px;
+  border-radius: 8px;
+  color: #fffaf2;
+  background:
+    linear-gradient(135deg, rgba(22, 20, 17, 0.18), rgba(22, 20, 17, 0.78)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 42px),
+    #6f8d72;
+}
+
+.map-preview span {
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.map-preview strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 500;
+}
+
+.loft-page .detail-menu,
+.star-page .detail-menu {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(12, 10, 10, 0.46);
+}
+
+.loft-page .detail-menu a:hover,
+.loft-page .detail-menu a:focus-visible,
+.loft-page .detail-menu a[aria-current="page"],
+.star-page .detail-menu a:hover,
+.star-page .detail-menu a:focus-visible,
+.star-page .detail-menu a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .castle-page {
   background: #f8f2e6;
 }
@@ -312,7 +528,7 @@ img {
   flex-direction: column;
   justify-content: center;
   gap: 28px;
-  padding: 110px clamp(24px, 6vw, 86px) 60px;
+  padding: 148px clamp(24px, 6vw, 86px) 60px;
 }
 
 .castle-copy h1 {
@@ -346,7 +562,7 @@ img {
 
 .forest-hero {
   min-height: 100vh;
-  padding: 112px clamp(18px, 5vw, 70px) 44px;
+  padding: 148px clamp(18px, 5vw, 70px) 44px;
   display: grid;
   grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
   align-items: end;
@@ -400,12 +616,12 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
   gap: clamp(18px, 4vw, 52px);
-  padding: 112px clamp(18px, 5vw, 70px) 52px;
+  padding: 148px clamp(18px, 5vw, 70px) 52px;
 }
 
 .loft-hero img {
   width: 100%;
-  height: calc(100vh - 164px);
+  height: calc(100vh - 200px);
   object-fit: cover;
   border-radius: 8px;
 }
@@ -443,7 +659,7 @@ img {
   position: relative;
   display: flex;
   align-items: end;
-  padding: 112px clamp(18px, 5vw, 70px) 52px;
+  padding: 148px clamp(18px, 5vw, 70px) 52px;
   overflow: hidden;
 }
 
@@ -497,7 +713,7 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   place-items: center;
-  padding: 96px clamp(18px, 5vw, 70px) 48px;
+  padding: 140px clamp(18px, 5vw, 70px) 48px;
   position: relative;
   overflow: hidden;
 }
@@ -569,22 +785,46 @@ img {
 @media (max-width: 900px) {
   .landing-header {
     align-items: flex-start;
+    position: absolute;
   }
 
   .landing-nav {
     display: none;
   }
 
+  .page-header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .detail-menu {
+    top: 72px;
+    left: 18px;
+    right: 18px;
+    border-radius: 8px;
+  }
+
+  .detail-menu a {
+    min-height: 32px;
+    padding: 8px 12px;
+  }
+
   .intro {
     position: absolute;
     top: 88px;
     bottom: auto;
+    right: 18px;
+  }
+
+  .intro h1 {
+    font-size: clamp(30px, 11vw, 54px);
+    line-height: 1.12;
   }
 
   .venue-panels {
     display: grid;
     grid-template-columns: 1fr;
-    padding-top: 44vh;
+    padding-top: max(360px, 52vh);
   }
 
   .venue-panel,
@@ -602,6 +842,10 @@ img {
   .panel-copy {
     bottom: 32px;
     transform: translateY(0);
+  }
+
+  .panel-copy strong {
+    font-size: clamp(30px, 10vw, 48px);
   }
 
   .panel-copy span:not(.eyebrow),
@@ -630,6 +874,39 @@ img {
   .ocean-band,
   .star-grid {
     grid-template-columns: 1fr;
+  }
+
+  .detail-content {
+    padding-top: 46px;
+  }
+
+  .info-page-main {
+    padding-top: 128px;
+  }
+
+  .single-info {
+    grid-template-columns: 1fr;
+  }
+
+  .single-info .section-image,
+  .single-info .section-image img {
+    min-height: 260px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    min-height: auto;
+  }
+
+  .map-card {
+    grid-row: auto;
+  }
+
+  .map-preview {
+    min-height: 180px;
   }
 }
 
