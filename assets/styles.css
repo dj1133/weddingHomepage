@@ -429,6 +429,125 @@ img {
   color: color-mix(in srgb, currentColor 72%, transparent);
 }
 
+.inquiry-section {
+  padding-top: 0;
+}
+
+.inquiry-form {
+  display: grid;
+  gap: 24px;
+  padding: clamp(24px, 5vw, 46px);
+  border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, currentColor 5%, transparent);
+}
+
+.form-heading {
+  display: grid;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.form-heading h2 {
+  font-size: clamp(30px, 5vw, 58px);
+  line-height: 1.05;
+}
+
+.form-heading p,
+.form-status {
+  margin: 0;
+  color: color-mix(in srgb, currentColor 70%, transparent);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.inquiry-form label,
+.date-group {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 8px;
+  color: inherit;
+  background: color-mix(in srgb, currentColor 5%, transparent);
+  font: inherit;
+}
+
+.inquiry-form textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.inquiry-form input:focus,
+.inquiry-form select:focus,
+.inquiry-form textarea:focus {
+  outline: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+  outline-offset: 2px;
+}
+
+.date-group {
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: 8px;
+}
+
+.date-group-head,
+.date-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.date-row {
+  margin-top: 12px;
+}
+
+.date-row label {
+  flex: 1 1 auto;
+}
+
+.ghost-button {
+  min-height: 38px;
+  padding: 9px 13px;
+  border: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+  border-radius: 999px;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ghost-button:hover,
+.ghost-button:focus-visible {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+.full-field {
+  max-width: none;
+}
+
+.submit-inquiry {
+  width: fit-content;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
 .info-list {
   display: grid;
   gap: 14px;
@@ -895,6 +1014,20 @@ img {
 
   .info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .date-group-head,
+  .date-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .submit-inquiry {
+    width: 100%;
   }
 
   .info-card {
