@@ -611,38 +611,38 @@ img {
   font-weight: 500;
 }
 
-.loft-page .detail-menu,
-.star-page .detail-menu {
+.Mconv-page .detail-menu,
+.SHconv-page .detail-menu {
   border-color: rgba(255, 255, 255, 0.16);
   background: rgba(12, 10, 10, 0.46);
 }
 
-.loft-page .detail-menu a:hover,
-.loft-page .detail-menu a:focus-visible,
-.loft-page .detail-menu a[aria-current="page"],
-.star-page .detail-menu a:hover,
-.star-page .detail-menu a:focus-visible,
-.star-page .detail-menu a[aria-current="page"] {
+.Mconv-page .detail-menu a:hover,
+.Mconv-page .detail-menu a:focus-visible,
+.Mconv-page .detail-menu a[aria-current="page"],
+.SHconv-page .detail-menu a:hover,
+.SHconv-page .detail-menu a:focus-visible,
+.SHconv-page .detail-menu a[aria-current="page"] {
   background: rgba(255, 255, 255, 0.12);
 }
 
-.castle-page {
+.dongbang-page {
   background: #f8f2e6;
 }
 
-.castle-hero {
+.dongbang-hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
 }
 
-.castle-hero img {
+.dongbang-hero img {
   width: 100%;
   height: 100vh;
   object-fit: cover;
 }
 
-.castle-copy {
+.dongbang-copy {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -650,12 +650,12 @@ img {
   padding: 148px clamp(24px, 6vw, 86px) 60px;
 }
 
-.castle-copy h1 {
+.dongbang-copy h1 {
   font-size: clamp(52px, 8vw, 112px);
   line-height: 0.9;
 }
 
-.castle-stats {
+.dongbang-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
@@ -663,23 +663,23 @@ img {
   margin-top: 22px;
 }
 
-.castle-stats div {
+.dongbang-stats div {
   background: #f8f2e6;
   padding: 24px;
 }
 
-.castle-stats strong {
+.dongbang-stats strong {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 28px;
 }
 
-.forest-page {
+.jsquare-page {
   background: #eef4e8;
   color: #1d2b20;
 }
 
-.forest-hero {
+.jsquare-hero {
   min-height: 100vh;
   padding: 148px clamp(18px, 5vw, 70px) 44px;
   display: grid;
@@ -688,49 +688,49 @@ img {
   gap: clamp(22px, 5vw, 72px);
 }
 
-.forest-card {
+.jsquare-card {
   align-self: center;
   display: grid;
   gap: 22px;
 }
 
-.forest-card h1 {
+.jsquare-card h1 {
   font-size: clamp(44px, 7vw, 92px);
   line-height: 0.94;
 }
 
-.forest-image {
+.jsquare-image {
   min-height: 68vh;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
 }
 
-.forest-image img {
+.jsquare-image img {
   width: 100%;
   height: 100%;
   min-height: 68vh;
   object-fit: cover;
 }
 
-.forest-strip {
+.jsquare-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   padding: 0 clamp(18px, 5vw, 70px) 70px;
 }
 
-.forest-strip article {
+.jsquare-strip article {
   border-top: 1px solid rgba(29, 43, 32, 0.22);
   padding-top: 18px;
 }
 
-.loft-page {
+.Mconv-page {
   background: #211915;
   color: #f7eee3;
 }
 
-.loft-hero {
+.Mconv-hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
@@ -738,42 +738,42 @@ img {
   padding: 148px clamp(18px, 5vw, 70px) 52px;
 }
 
-.loft-hero img {
+.Mconv-hero img {
   width: 100%;
   height: calc(100vh - 200px);
   object-fit: cover;
   border-radius: 8px;
 }
 
-.loft-copy {
+.Mconv-copy {
   align-self: end;
   display: grid;
   gap: 22px;
 }
 
-.loft-copy h1 {
+.Mconv-copy h1 {
   font-size: clamp(48px, 8vw, 104px);
   line-height: 0.92;
 }
 
-.loft-notes {
+.Mconv-notes {
   display: grid;
   gap: 14px;
   padding-left: 0;
   list-style: none;
 }
 
-.loft-notes li {
+.Mconv-notes li {
   border-bottom: 1px solid rgba(247, 238, 227, 0.22);
   padding-bottom: 14px;
 }
 
-.ocean-page {
+.theRium-page {
   background: #edf8f7;
   color: #173237;
 }
 
-.ocean-hero {
+.theRium-hero {
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -782,7 +782,7 @@ img {
   overflow: hidden;
 }
 
-.ocean-hero img {
+.theRium-hero img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -790,14 +790,14 @@ img {
   object-fit: cover;
 }
 
-.ocean-hero::after {
+.theRium-hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(237, 248, 247, 0.94), rgba(237, 248, 247, 0.42) 48%, rgba(237, 248, 247, 0.06));
 }
 
-.ocean-copy {
+.theRium-copy {
   position: relative;
   z-index: 1;
   width: min(560px, 100%);
@@ -805,29 +805,29 @@ img {
   gap: 22px;
 }
 
-.ocean-copy h1 {
+.theRium-copy h1 {
   font-size: clamp(50px, 9vw, 118px);
   line-height: 0.9;
 }
 
-.ocean-band {
+.theRium-band {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr 0.8fr;
   gap: 1px;
   background: rgba(23, 50, 55, 0.14);
 }
 
-.ocean-band div {
+.theRium-band div {
   background: #edf8f7;
   padding: clamp(24px, 4vw, 46px);
 }
 
-.star-page {
+.SHconv-page {
   background: #090b16;
   color: #f4f2ff;
 }
 
-.star-hero {
+.SHconv-hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -837,7 +837,7 @@ img {
   overflow: hidden;
 }
 
-.star-hero img {
+.SHconv-hero img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -846,14 +846,14 @@ img {
   opacity: 0.58;
 }
 
-.star-hero::after {
+.SHconv-hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 50% 46%, rgba(116, 98, 208, 0.12), rgba(9, 11, 22, 0.84) 62%);
 }
 
-.star-copy {
+.SHconv-copy {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -863,19 +863,19 @@ img {
   justify-items: center;
 }
 
-.star-copy h1 {
+.SHconv-copy h1 {
   font-size: clamp(54px, 10vw, 136px);
   line-height: 0.86;
 }
 
-.star-grid {
+.SHconv-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: rgba(244, 242, 255, 0.16);
 }
 
-.star-grid article {
+.SHconv-grid article {
   min-height: 180px;
   display: grid;
   align-content: end;
@@ -973,25 +973,25 @@ img {
     transform: none;
   }
 
-  .castle-hero,
-  .forest-hero,
-  .loft-hero {
+  .dongbang-hero,
+  .jsquare-hero,
+  .Mconv-hero {
     grid-template-columns: 1fr;
   }
 
-  .castle-hero img,
-  .loft-hero img {
+  .dongbang-hero img,
+  .Mconv-hero img {
     height: 58vh;
   }
 
-  .castle-copy {
+  .dongbang-copy {
     padding-top: 34px;
   }
 
-  .forest-strip,
-  .castle-stats,
-  .ocean-band,
-  .star-grid {
+  .jsquare-strip,
+  .dongbang-stats,
+  .theRium-band,
+  .SHconv-grid {
     grid-template-columns: 1fr;
   }
 
