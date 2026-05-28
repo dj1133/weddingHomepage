@@ -683,7 +683,7 @@ img {
   min-height: 100vh;
   padding: 148px clamp(18px, 5vw, 70px) 44px;
   display: grid;
-  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  grid-template-columns: minmax(360px, 0.54fr) minmax(0, 1fr);
   align-items: end;
   gap: clamp(22px, 5vw, 72px);
 }
@@ -695,8 +695,10 @@ img {
 }
 
 .jsquare-card h1 {
-  font-size: clamp(44px, 7vw, 92px);
-  line-height: 0.94;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.06;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 .jsquare-image {
@@ -977,6 +979,11 @@ img {
   .jsquare-hero,
   .Mconv-hero {
     grid-template-columns: 1fr;
+  }
+
+  .jsquare-card h1 {
+    font-size: clamp(38px, 10vw, 56px);
+    line-height: 1.08;
   }
 
   .dongbang-hero img,
