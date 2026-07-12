@@ -53,7 +53,7 @@ inquiryForms.forEach((form) => {
       getValue(formData, "message"),
     ].join("\n");
 
-    const subject = `[Lumiere Wedding 문의] ${venueName} 상담 신청`;
+    const subject = `[Dreams Wedding 문의] ${venueName} 상담 신청`;
     const mailto = `mailto:${encodeURIComponent(venueEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailto;
