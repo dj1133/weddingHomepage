@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 50 1000 750" role="img" aria-labelledby="title desc">
+  <title id="title">제이스퀘어호텔 약도</title>
+  <desc id="desc">진주시청 남서쪽, 시청사거리에서 솔밭로를 따라 남쪽으로 내려오면 도동천로 전 서측에 있는 제이스퀘어호텔 위치 안내 약도</desc>
+  <defs>
+    <style>
+      text {
+        font-family: "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+        fill: #2f3438;
+        letter-spacing: 0;
+      }
+      .road-name {
+        font-size: 36px;
+        font-weight: 700;
+        fill: #5d6770;
+      }
+      .place-name {
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .minor-label {
+        font-size: 32px;
+        font-weight: 600;
+        fill: #66717a;
+      }
+      .hotel-name {
+        font-size: 44px;
+        font-weight: 800;
+        fill: #ffffff;
+      }
+    </style>
+    <filter id="hotel-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#3b284f" flood-opacity=".24"/>
+    </filter>
+    <marker id="route-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#76509a"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="900" fill="#f5f6f4"/>
+
+  <!-- 주변 블록은 위치 파악에 필요한 외곽만 단순화했다. -->
+  <g fill="#e8ebe7" stroke="#d4d9d3" stroke-width="3">
+    <path d="M52 42H610V168H52Z"/>
+    <path d="M748 42H1148V168H748Z" fill="#dfe5df"/>
+    <path d="M52 320H330V462H52Z"/>
+    <path d="M360 320H620V462H360Z"/>
+    <path d="M758 320H938V468H758Z"/>
+    <path d="M968 320H1148V468H968Z"/>
+    <path d="M52 538H248V704H52Z"/>
+    <path d="M758 536H930V704H758Z"/>
+    <path d="M962 536H1148V704H962Z"/>
+    <path d="M52 814H420V868H52Z"/>
+    <path d="M780 814H1148V868H780Z"/>
+  </g>
+
+  <!-- 주요 도로: 동진로, 솔밭로, 도동천로 -->
+  <g fill="none" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M0 242H1200" stroke="#cfd5d0" stroke-width="108"/>
+    <path d="M0 242H1200" stroke="#ffffff" stroke-width="98"/>
+    <path d="M688 190V900" stroke="#cfd5d0" stroke-width="100"/>
+    <path d="M688 190V900" stroke="#ffffff" stroke-width="90"/>
+    <path d="M0 770H1200" stroke="#cfd5d0" stroke-width="100"/>
+    <path d="M0 770H1200" stroke="#ffffff" stroke-width="90"/>
+  </g>
+
+  <!-- 호텔 북측의 보조도로 -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M22 500H640" stroke="#d8ddd8" stroke-width="46"/>
+    <path d="M22 500H640" stroke="#ffffff" stroke-width="38"/>
+    <path d="M736 500H1178" stroke="#d8ddd8" stroke-width="46"/>
+    <path d="M736 500H1178" stroke="#ffffff" stroke-width="38"/>
+  </g>
+
+  <!-- 시청사거리 횡단보도 -->
+  <g stroke="#c4cac5" stroke-width="10" stroke-linecap="square">
+    <path d="M630 174V216" stroke-dasharray="10 12"/>
+    <path d="M746 268V310" stroke-dasharray="10 12"/>
+    <path d="M612 300H652" stroke-dasharray="10 12"/>
+    <path d="M724 184H764" stroke-dasharray="10 12"/>
+  </g>
+
+  <!-- 방위 -->
+  <g transform="translate(125 72)">
+    <path d="M0 46L20 0L40 46L20 36Z" fill="#485158"/>
+    <text x="20" y="78" text-anchor="middle" class="minor-label">N</text>
+  </g>
+
+  <!-- 기준점 -->
+  <g>
+    <rect x="790" y="62" width="302" height="88" rx="6" fill="#d5ddd5" stroke="#aeb9af" stroke-width="3"/>
+    <path d="M830 116V88H854V116M824 116H860" fill="none" stroke="#56635a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="882" y="119" class="place-name">진주시청</text>
+
+    <rect x="512" y="352" width="108" height="74" rx="6" fill="#fff4ce" stroke="#e2c56a" stroke-width="3"/>
+    <text x="566" y="400" text-anchor="middle" class="place-name" fill="#7a5a00">CU</text>
+  </g>
+
+  <!-- 도로명과 교차로 -->
+  <text x="262" y="254" text-anchor="middle" class="road-name">동진로</text>
+  <text x="1040" y="254" text-anchor="middle" class="road-name">동진로</text>
+  <g>
+    <path d="M734 395H760" stroke="#9ca6ad" stroke-width="3"/>
+    <rect x="760" y="366" width="138" height="58" rx="5" fill="#ffffff" stroke="#cbd1cc" stroke-width="3"/>
+    <text x="829" y="405" text-anchor="middle" class="road-name">솔밭로</text>
+  </g>
+  <text x="960" y="782" text-anchor="middle" class="road-name">도동천로</text>
+
+  <g transform="translate(688 242)">
+    <circle r="62" fill="#ffffff" stroke="#53606b" stroke-width="4"/>
+    <text y="-4" text-anchor="middle" class="minor-label">시청</text>
+    <text y="27" text-anchor="middle" class="minor-label">사거리</text>
+  </g>
+
+  <!-- 시청사거리에서 호텔까지의 진행 방향 -->
+  <path d="M660 328V474" fill="none" stroke="#76509a" stroke-width="8" stroke-dasharray="12 12" marker-end="url(#route-arrow)"/>
+
+  <!-- 실제 상대 위치: 솔밭로 서측, 도동천로 북측 -->
+  <g filter="url(#hotel-shadow)">
+    <path d="M282 548H606V702H282Z" fill="#76509a" stroke="#4e3268" stroke-width="5"/>
+    <path d="M606 590H650V658H606" fill="#76509a" stroke="#4e3268" stroke-width="5"/>
+  </g>
+  <g transform="translate(320 576)">
+    <rect width="62" height="62" rx="31" fill="#ffffff" fill-opacity=".18" stroke="#ffffff" stroke-width="3"/>
+    <text x="31" y="43" text-anchor="middle" font-size="35" font-weight="800" fill="#ffffff">J</text>
+  </g>
+  <text x="510" y="640" text-anchor="middle" class="hotel-name">제이스퀘어호텔</text>
+
+  <!-- 호텔 위치를 도로와 직접 연결 -->
+  <path d="M650 624H674" stroke="#76509a" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="688" cy="624" r="12" fill="#76509a" stroke="#ffffff" stroke-width="5"/>
+
+</svg>

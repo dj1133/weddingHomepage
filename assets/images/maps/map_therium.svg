@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">더리움 약도</title>
+  <desc id="desc">진성IC 남쪽, 동부로에서 동부로1307번길로 진입해 진성농공단지 동쪽에 있는 더리움 위치 안내 약도</desc>
+  <defs>
+    <style>
+      text {
+        font-family: "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+        fill: #303438;
+        letter-spacing: 0;
+      }
+      .road-label { font-size: 31px; font-weight: 700; fill: #596168; }
+      .place-label { font-size: 32px; font-weight: 700; }
+      .minor-label { font-size: 27px; font-weight: 600; fill: #697178; }
+      .venue-label { font-size: 40px; font-weight: 800; fill: #2f3235; }
+    </style>
+    <filter id="pin-shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#183e3b" flood-opacity=".22"/>
+    </filter>
+    <marker id="route-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#3d7774"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="900" fill="#f4f5f3"/>
+
+  <!-- 산지와 농경지 -->
+  <path d="M0 0H330C305 129 256 222 238 326C211 483 278 626 220 900H0Z" fill="#e5ebe3"/>
+  <path d="M1030 0H1200V900H1060C1036 760 1048 620 1094 495C1135 383 1104 210 1030 0Z" fill="#e5ebe3"/>
+  <path d="M70 650C200 608 322 640 404 728C474 802 523 836 608 900H70Z" fill="#e8ece6"/>
+
+  <!-- 진성농공단지 건물군 -->
+  <g fill="#e2e5e3" stroke="#cdd2ce" stroke-width="2">
+    <path d="M190 302H354V374H190Z"/>
+    <path d="M382 298H570V374H382Z"/>
+    <path d="M598 292H742V372H598Z"/>
+    <path d="M148 404H306V476H148Z"/>
+    <path d="M334 402H516V474H334Z"/>
+    <path d="M544 398H720V472H544Z"/>
+    <path d="M164 515H330V588H164Z"/>
+    <path d="M360 510H522V584H360Z"/>
+    <path d="M550 508H706V582H550Z"/>
+  </g>
+
+  <!-- 남해고속도로 -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-40 166C255 166 520 176 746 150C930 130 1066 86 1240 26" stroke="#c5cac7" stroke-width="44"/>
+    <path d="M-40 166C255 166 520 176 746 150C930 130 1066 86 1240 26" stroke="#ffffff" stroke-width="34"/>
+    <path d="M-40 220C270 220 529 224 756 195C931 173 1076 126 1240 70" stroke="#c5cac7" stroke-width="32"/>
+    <path d="M-40 220C270 220 529 224 756 195C931 173 1076 126 1240 70" stroke="#ffffff" stroke-width="22"/>
+  </g>
+
+  <!-- 동부로와 동부로1307번길 -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1006 -40C978 129 943 270 905 394C863 528 803 675 824 940" stroke="#c8cdca" stroke-width="44"/>
+    <path d="M1006 -40C978 129 943 270 905 394C863 528 803 675 824 940" stroke="#ffffff" stroke-width="34"/>
+
+    <path d="M873 456C754 448 652 447 536 438C405 428 294 420 118 432" stroke="#d1d6d2" stroke-width="30"/>
+    <path d="M873 456C754 448 652 447 536 438C405 428 294 420 118 432" stroke="#ffffff" stroke-width="22"/>
+
+    <path d="M360 432V642C360 698 322 736 266 756" stroke="#d6dad7" stroke-width="24"/>
+    <path d="M360 432V642C360 698 322 736 266 756" stroke="#ffffff" stroke-width="16"/>
+    <path d="M596 440V660C596 718 650 748 714 760" stroke="#d6dad7" stroke-width="24"/>
+    <path d="M596 440V660C596 718 650 748 714 760" stroke="#ffffff" stroke-width="16"/>
+  </g>
+
+  <!-- 진성IC 진출입 램프 -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M840 178C879 206 918 237 932 283C944 321 927 352 906 392" stroke="#d0d5d1" stroke-width="24"/>
+    <path d="M840 178C879 206 918 237 932 283C944 321 927 352 906 392" stroke="#ffffff" stroke-width="16"/>
+    <path d="M786 190C820 230 845 260 850 302C854 342 836 382 798 408" stroke="#d0d5d1" stroke-width="22"/>
+    <path d="M786 190C820 230 845 260 850 302C854 342 836 382 798 408" stroke="#ffffff" stroke-width="14"/>
+  </g>
+
+  <!-- 기준점과 도로명 -->
+  <g>
+    <circle cx="894" cy="204" r="50" fill="#ffffff" stroke="#586169" stroke-width="4"/>
+    <text x="894" y="197" text-anchor="middle" class="minor-label">진성</text>
+    <text x="894" y="229" text-anchor="middle" class="minor-label">IC</text>
+
+    <rect x="170" y="272" width="500" height="104" rx="5" fill="#dde2de" stroke="#b9c1bb" stroke-width="3"/>
+    <text x="420" y="337" text-anchor="middle" class="place-label">진성농공단지</text>
+
+    <text x="410" y="750" text-anchor="middle" class="place-label" fill="#636a70">상촌리</text>
+  </g>
+
+  <text x="395" y="142" text-anchor="middle" class="road-label">남해고속도로</text>
+  <text x="968" y="320" transform="rotate(100 968 320)" text-anchor="middle" class="road-label">동부로</text>
+  <text x="520" y="424" text-anchor="middle" class="road-label">동부로1307번길</text>
+
+  <!-- 진성IC에서 동부로를 따라 남하 후 우회전 -->
+  <path d="M914 260C906 340 890 405 871 454C842 474 813 486 777 492" fill="none" stroke="#3d7774" stroke-width="8" marker-end="url(#route-arrow)"/>
+
+  <!-- 목적지: 농공단지 동쪽, 동부로 서측 -->
+  <g filter="url(#pin-shadow)">
+    <path d="M702 493C702 455 733 425 771 425C809 425 840 455 840 493C840 547 771 612 771 612C771 612 702 547 702 493Z" fill="#3d7774" stroke="#285a56" stroke-width="5"/>
+    <circle cx="771" cy="492" r="23" fill="#ffffff"/>
+  </g>
+  <path d="M771 599V650H904" fill="none" stroke="#7b8186" stroke-width="3"/>
+  <rect x="888" y="604" width="242" height="96" rx="5" fill="#ffffff" stroke="#aeb4b0" stroke-width="3"/>
+  <text x="1009" y="666" text-anchor="middle" class="venue-label">더리움</text>
+
+  <!-- 방위 -->
+  <g transform="translate(76 70)">
+    <path d="M0 42L18 0L36 42L18 33Z" fill="#4c545a"/>
+    <text x="18" y="73" text-anchor="middle" class="minor-label">N</text>
+  </g>
+</svg>

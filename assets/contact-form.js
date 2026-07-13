@@ -31,7 +31,7 @@ inquiryForms.forEach((form) => {
 
     const formData = new FormData(form);
     const venueName = form.dataset.venueName || getValue(formData, "desiredHall");
-    const venueEmail = form.dataset.venueEmail;
+    const venueEmail = form.dataset.venueEmail || "";
     const dates = formData
       .getAll("weddingDate")
       .map((date) => String(date).trim())
@@ -53,9 +53,15 @@ inquiryForms.forEach((form) => {
       getValue(formData, "message"),
     ].join("\n");
 
+    if (!venueEmail || venueEmail.endsWith("@Dreamswedding.kr")) {
+      if (status) {
+        status.textContent = "공식 이메일이 확인되지 않아 메일 앱을 열지 않았습니다. 위 연락처로 직접 문의해 주세요.";
+      }
+      return;
+    }
+
     const subject = `[Dreams Wedding 문의] ${venueName} 상담 신청`;
     const mailto = `mailto:${encodeURIComponent(venueEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
     window.location.href = mailto;
 
     if (status) {

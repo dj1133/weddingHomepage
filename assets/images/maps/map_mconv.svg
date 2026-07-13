@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">M컨벤션 약도</title>
+  <desc id="desc">진주시 명석면 명석삼거리 남서쪽, 나불로 284에 있는 M컨벤션 위치와 진입 방향을 표시한 약도</desc>
+  <defs>
+    <style>
+      text {
+        font-family: "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+        fill: #303438;
+        letter-spacing: 0;
+      }
+      .road-label { font-size: 31px; font-weight: 700; fill: #596168; }
+      .place-label { font-size: 32px; font-weight: 700; }
+      .minor-label { font-size: 27px; font-weight: 600; fill: #697178; }
+      .venue-label { font-size: 40px; font-weight: 800; fill: #2f3235; }
+    </style>
+    <filter id="pin-shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#46351c" flood-opacity=".22"/>
+    </filter>
+    <marker id="route-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#9a6f2f"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="900" fill="#f4f5f3"/>
+
+  <!-- 주변 지형과 낮은 밀도의 건물군 -->
+  <path d="M0 0H300C270 128 292 245 252 352C214 453 128 514 0 548Z" fill="#e5ebe3"/>
+  <path d="M1025 0H1200V900H1066C1104 758 1090 640 1048 528C1008 420 1017 222 1025 0Z" fill="#e6ebe4"/>
+  <g fill="#e6e8e6" stroke="#d1d5d2" stroke-width="2">
+    <path d="M366 92H546V212H366Z"/>
+    <path d="M576 88H746V212H576Z"/>
+    <path d="M790 72H866V225H790Z"/>
+    <path d="M332 300H472V405H332Z"/>
+    <path d="M500 292H648V414H500Z"/>
+    <path d="M674 286H820V410H674Z"/>
+    <path d="M110 642H292V780H110Z"/>
+    <path d="M330 650H488V780H330Z"/>
+    <path d="M515 658H654V790H515Z"/>
+    <path d="M980 602H1138V758H980Z"/>
+  </g>
+
+  <!-- 얇은 도로 체계: 진주대로, 나불로, 광제산로 -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 900C142 760 245 676 362 610C458 556 532 510 600 425" stroke="#c8cdca" stroke-width="46"/>
+    <path d="M40 900C142 760 245 676 362 610C458 556 532 510 600 425" stroke="#ffffff" stroke-width="36"/>
+
+    <path d="M0 545C220 536 430 526 610 512C720 504 814 500 908 500" stroke="#c8cdca" stroke-width="44"/>
+    <path d="M0 545C220 536 430 526 610 512C720 504 814 500 908 500" stroke="#ffffff" stroke-width="34"/>
+
+    <path d="M908 0V500C908 612 936 743 992 900" stroke="#c8cdca" stroke-width="44"/>
+    <path d="M908 0V500C908 612 936 743 992 900" stroke="#ffffff" stroke-width="34"/>
+
+    <path d="M600 425C684 374 765 330 908 310" stroke="#d4d8d5" stroke-width="28"/>
+    <path d="M600 425C684 374 765 330 908 310" stroke="#ffffff" stroke-width="20"/>
+    <path d="M646 512V700C646 747 620 786 580 817" stroke="#d4d8d5" stroke-width="24"/>
+    <path d="M646 512V700C646 747 620 786 580 817" stroke="#ffffff" stroke-width="16"/>
+  </g>
+
+  <!-- 명석삼거리 -->
+  <circle cx="908" cy="500" r="48" fill="#ffffff" stroke="#60686f" stroke-width="4"/>
+  <text x="908" y="494" text-anchor="middle" class="minor-label">명석</text>
+  <text x="908" y="525" text-anchor="middle" class="minor-label">삼거리</text>
+
+  <!-- 기준 시설 -->
+  <g>
+    <rect x="720" y="100" width="300" height="138" rx="5" fill="#dde2de" stroke="#b9c1bb" stroke-width="3"/>
+    <text x="870" y="156" text-anchor="middle" class="place-label">명석면사무소</text>
+    <text x="870" y="198" text-anchor="middle" class="minor-label">명석초등학교</text>
+
+    <rect x="310" y="258" width="240" height="92" rx="5" fill="#e1e4e1" stroke="#c3c8c4" stroke-width="3"/>
+    <text x="430" y="316" text-anchor="middle" class="place-label">명석중학교</text>
+  </g>
+
+  <!-- 도로명과 방면 -->
+  <text x="188" y="704" transform="rotate(-38 188 704)" class="road-label">진주대로</text>
+  <text x="340" y="548" text-anchor="middle" class="road-label">나불로</text>
+  <text x="950" y="335" transform="rotate(90 950 335)" text-anchor="middle" class="road-label">광제산로</text>
+  <text x="74" y="502" class="minor-label">진주 시내 방면</text>
+
+  <!-- 진주시내에서 나불로를 따라 진입 -->
+  <path d="M175 514C360 507 535 496 694 486C752 482 788 483 820 487" fill="none" stroke="#9a6f2f" stroke-width="8" marker-end="url(#route-arrow)"/>
+
+  <!-- 목적지: 명석삼거리 바로 남서측 -->
+  <g filter="url(#pin-shadow)">
+    <path d="M751 551C751 513 782 483 820 483C858 483 889 513 889 551C889 605 820 670 820 670C820 670 751 605 751 551Z" fill="#9a6f2f" stroke="#6f4e1e" stroke-width="5"/>
+    <circle cx="820" cy="550" r="23" fill="#ffffff"/>
+  </g>
+  <path d="M750 674H820V651" fill="none" stroke="#7b8186" stroke-width="3"/>
+  <rect x="476" y="626" width="274" height="96" rx="5" fill="#ffffff" stroke="#aeb4b0" stroke-width="3"/>
+  <text x="613" y="687" text-anchor="middle" class="venue-label">M컨벤션</text>
+
+  <!-- 방위 -->
+  <g transform="translate(1100 70)">
+    <path d="M0 42L18 0L36 42L18 33Z" fill="#4c545a"/>
+    <text x="18" y="73" text-anchor="middle" class="minor-label">N</text>
+  </g>
+</svg>

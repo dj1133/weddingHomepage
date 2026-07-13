@@ -9,7 +9,7 @@ if (photoCards.length) {
   lightbox.innerHTML = `
     <button type="button" class="photo-lightbox-close" aria-label="Close photo">Close</button>
     <figure class="photo-lightbox-frame">
-      <img src="" alt="">
+      <img src="" alt="" decoding="async">
       <figcaption></figcaption>
     </figure>
   `;
