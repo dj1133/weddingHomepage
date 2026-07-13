@@ -376,6 +376,14 @@ img {
   grid-row: auto;
 }
 
+.single-info.map-page-layout {
+  grid-template-columns: minmax(260px, 0.28fr) minmax(0, 0.72fr);
+}
+
+.map-page-layout .map-card {
+  padding: clamp(14px, 2vw, 24px);
+}
+
 .single-info .section-image {
   min-height: 420px;
   overflow: hidden;
@@ -624,6 +632,17 @@ img {
   padding: 0;
   overflow: hidden;
   background: #f5efe5;
+}
+
+.map-page-layout .map-preview.map-image {
+  aspect-ratio: 8 / 5;
+}
+
+.map-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
 }
 
 .map-preview.map-image img {
@@ -1172,6 +1191,10 @@ img {
   }
 
   .single-info {
+    grid-template-columns: 1fr;
+  }
+
+  .single-info.map-page-layout {
     grid-template-columns: 1fr;
   }
 

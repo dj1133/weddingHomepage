@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">선학컨벤션 오시는 길</title>
+  <desc id="desc">말티고개로에서 말티고개로100번길로 진입해 선학컨벤션으로 이동하는 단순화 약도</desc>
+
+  <defs>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#27312f" flood-opacity=".17"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 11 6 1 11Z" fill="#d86755"/>
+    </marker>
+    <path id="mainLabel" d="M80 230 C370 277 607 345 820 420 C1070 508 1300 545 1510 610"/>
+    <style>
+      text {
+        font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+        fill: #26312f;
+        letter-spacing: 0;
+      }
+      .road-edge {
+        fill: none;
+        stroke: #d3cdc2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .road {
+        fill: none;
+        stroke: #fffdfa;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .road-name {
+        font-size: 21px;
+        font-weight: 700;
+        fill: #5d6662;
+      }
+      .landmark {
+        font-size: 20px;
+        font-weight: 680;
+        fill: #394441;
+      }
+      .venue-name {
+        fill: #fffdfa;
+      }
+      .venue-subtitle {
+        fill: #d9dedb;
+      }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#f6f2ea"/>
+
+  <g aria-label="제목">
+    <text x="78" y="88" font-size="48" font-weight="760">선학컨벤션 오시는 길</text>
+    <text x="80" y="129" font-size="22" font-weight="520" fill="#747b77">경상남도 진주시 말티고개로100번길 16-9</text>
+    <line x1="80" y1="158" x2="1520" y2="158" stroke="#d8d1c6" stroke-width="2"/>
+  </g>
+
+  <g aria-label="북쪽 방향" transform="translate(1462 62)">
+    <path d="M0 42 15 0 30 42 15 34Z" fill="#26312f"/>
+    <text x="15" y="64" text-anchor="middle" font-size="16" font-weight="750">N</text>
+  </g>
+
+  <g aria-label="주변 건물" opacity=".78">
+    <path d="M45 300 285 340 258 462 24 417Z" fill="#e9e3da"/>
+    <path d="M316 376 513 421 479 548 289 504Z" fill="#e6e0d7"/>
+    <path d="M806 250 1010 294 978 386 788 347Z" fill="#e9e3da"/>
+    <path d="M766 474 921 509 894 617 742 581Z" fill="#e7e1d8"/>
+    <path d="M873 548 1007 579 978 689 846 658Z" fill="#e9e3da"/>
+    <path d="M1018 570 1171 607 1135 738 989 703Z" fill="#e5dfd6"/>
+    <path d="M1189 608 1372 650 1330 809 1158 769Z" fill="#e9e3da"/>
+    <path d="M1379 661 1540 703 1505 844 1343 805Z" fill="#e5dfd6"/>
+    <path d="M737 716 886 749 850 867 706 834Z" fill="#e8e2d9"/>
+  </g>
+
+  <g aria-label="도로">
+    <path class="road-edge" d="M-90 203 C285 245 555 325 814 418 C1066 508 1320 541 1680 665" stroke-width="91"/>
+    <path class="road" d="M-90 203 C285 245 555 325 814 418 C1066 508 1320 541 1680 665" stroke-width="67"/>
+    <path d="M-90 203 C285 245 555 325 814 418 C1066 508 1320 541 1680 665" fill="none" stroke="#ddd6cb" stroke-width="2.5" stroke-dasharray="24 20"/>
+
+    <path class="road-edge" d="M884 165 C853 275 795 343 752 407 C707 477 692 565 650 652 C621 696 560 735 494 774 C360 845 245 922 119 1012" stroke-width="49"/>
+    <path class="road" d="M884 165 C853 275 795 343 752 407 C707 477 692 565 650 652 C621 696 560 735 494 774 C360 845 245 922 119 1012" stroke-width="32"/>
+
+    <path class="road-edge" d="M650 652 C758 714 836 806 925 1017" stroke-width="49"/>
+    <path class="road" d="M650 652 C758 714 836 806 925 1017" stroke-width="32"/>
+
+    <path class="road-edge" d="M1138 518 C1113 608 1087 735 1015 914 C990 962 955 1001 921 1027" stroke-width="44"/>
+    <path class="road" d="M1138 518 C1113 608 1087 735 1015 914 C990 962 955 1001 921 1027" stroke-width="28"/>
+
+    <path class="road-edge" d="M1458 574 C1403 650 1398 773 1488 926" stroke-width="42"/>
+    <path class="road" d="M1458 574 C1403 650 1398 773 1488 926" stroke-width="27"/>
+
+    <path class="road-edge" d="M1030 176 C1002 255 986 329 967 471" stroke-width="37"/>
+    <path class="road" d="M1030 176 C1002 255 986 329 967 471" stroke-width="23"/>
+  </g>
+
+  <g aria-label="도로명">
+    <text class="road-name">
+      <textPath href="#mainLabel" startOffset="14%">말티고개로</textPath>
+    </text>
+  </g>
+
+  <g aria-label="선학컨벤션 안내 경로">
+    <path d="M1480 590 C1240 522 1039 498 814 418 C789 409 770 405 752 407 C707 477 692 565 650 652 C621 696 560 735 509 765"
+      fill="none" stroke="#d86755" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+    <circle cx="752" cy="407" r="13" fill="#fffdfa" stroke="#d86755" stroke-width="6"/>
+    <g transform="translate(733 460)">
+      <rect x="-4" y="-25" width="256" height="43" rx="6" fill="#fffdfa" stroke="#d8d1c6"/>
+      <text x="124" y="4" text-anchor="middle" font-size="18" font-weight="740" fill="#bf5646">말티고개로100번길 진입</text>
+    </g>
+  </g>
+
+  <g aria-label="카페829" transform="translate(896 245)">
+    <rect x="-58" y="-31" width="116" height="62" rx="8" fill="#fffdfa" stroke="#c9c1b5" stroke-width="2"/>
+    <path d="M-38 -8h25v18h-25zm25 4h7a7 7 0 0 1 0 14h-7" fill="none" stroke="#7d8782" stroke-width="3"/>
+    <text x="15" y="8" font-size="17" font-weight="700">카페829</text>
+  </g>
+
+  <g aria-label="진짜로국밥" transform="translate(817 535)">
+    <circle cx="-20" cy="-2" r="17" fill="#fffdfa" stroke="#b8aea1" stroke-width="3"/>
+    <path d="M-31 -5h22c0 9-5 15-11 15s-11-6-11-15Z" fill="#b8aea1"/>
+    <text x="10" y="6" class="landmark">진짜로국밥</text>
+  </g>
+
+  <g aria-label="버스정류소" transform="translate(1321 555)">
+    <rect x="-18" y="-22" width="36" height="44" rx="7" fill="#557c76"/>
+    <rect x="-11" y="-14" width="22" height="15" rx="2" fill="#fffdfa"/>
+    <circle cx="-8" cy="14" r="3.5" fill="#fffdfa"/>
+    <circle cx="8" cy="14" r="3.5" fill="#fffdfa"/>
+    <text x="30" y="-4" class="landmark">하대대영·초전대림아파트</text>
+    <text x="30" y="23" font-size="18" font-weight="540" fill="#6e7672">버스정류소</text>
+  </g>
+
+  <g aria-label="대영아파트" transform="translate(1190 735)">
+    <rect x="-28" y="-31" width="50" height="62" rx="4" fill="#8ca59a"/>
+    <path d="M-18 -18h9m10 0h9m-28 13h9m10 0h9m-28 13h9m10 0h9" stroke="#fffdfa" stroke-width="4"/>
+    <text x="36" y="8" class="landmark">대영아파트</text>
+  </g>
+
+  <g aria-label="금호타이어" transform="translate(1052 624)">
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#8a918d" stroke-width="7"/>
+    <circle cx="0" cy="0" r="7" fill="#8a918d"/>
+    <text x="34" y="7" class="landmark">금호타이어</text>
+  </g>
+
+  <g aria-label="선학컨벤션" transform="translate(492 777)">
+    <path d="M0 -87 C-44 -87 -72 -58 -72 -18 C-72 33 0 91 0 91 C0 91 72 33 72 -18 C72 -58 44 -87 0 -87Z"
+      fill="#d86755" filter="url(#shadow)"/>
+    <circle cx="0" cy="-20" r="31" fill="#fffdfa"/>
+    <circle cx="-10" cy="-20" r="13" fill="none" stroke="#d86755" stroke-width="5"/>
+    <circle cx="10" cy="-20" r="13" fill="none" stroke="#d86755" stroke-width="5"/>
+    <g transform="translate(92 -34)">
+      <rect x="-8" y="-20" width="254" height="78" rx="8" fill="#26312f"/>
+      <text class="venue-name" x="18" y="13" font-size="30" font-weight="800">선학컨벤션</text>
+      <text class="venue-subtitle" x="18" y="42" font-size="16" font-weight="520">WEDDING &amp; CONVENTION</text>
+    </g>
+  </g>
+
+  <g aria-label="하단 안내">
+    <rect x="80" y="906" width="1440" height="1" fill="#d8d1c6"/>
+    <circle cx="96" cy="948" r="6" fill="#d86755"/>
+    <text x="116" y="956" font-size="21" font-weight="650">내비게이션에서 ‘선학컨벤션’을 검색해 주세요.</text>
+    <text x="1518" y="956" text-anchor="end" font-size="16" font-weight="500" fill="#858c88">약도는 이해를 돕기 위해 단순화되었습니다.</text>
+  </g>
+</svg>
