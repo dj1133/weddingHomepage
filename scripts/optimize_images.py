@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-from PIL import Image, ImageOps, features
+from PIL import Image, ImageFilter, ImageOps, features
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,6 +17,8 @@ class ImageSpec:
     slug: str
     source: str
     widths: tuple[int, ...]
+    square_crop: bool = False
+    square_contain: bool = False
 
 
 HALL_WIDTHS = (480, 768, 1024)
@@ -24,10 +26,10 @@ PHOTO_WIDTHS = (480, 960, 1600)
 DONG_BANG_PHOTO_WIDTHS = (480, 960, 1600, 1920)
 
 IMAGE_SPECS = (
-    ImageSpec("hall-dongbang", "assets/images/hall_dongbang.png", HALL_WIDTHS),
-    ImageSpec("hall-jsquare", "assets/images/hall_jsquare.png", HALL_WIDTHS),
-    ImageSpec("hall-mconv", "assets/images/hall_Mconv.png", HALL_WIDTHS),
-    ImageSpec("hall-therium", "assets/images/hall_theRium.png", HALL_WIDTHS),
+    ImageSpec("hall-dongbang", "assets/images/dongbang/KJH_8589---.jpg", HALL_WIDTHS, square_crop=True),
+    ImageSpec("hall-jsquare", "assets/images/jsquare/308A1718---.jpg", HALL_WIDTHS, square_crop=True),
+    ImageSpec("hall-mconv", "assets/images/mconv/hall_mconv.jpg", HALL_WIDTHS, square_contain=True),
+    ImageSpec("hall-therium", "assets/images/rium/hall_rium.jpg", HALL_WIDTHS, square_crop=True),
     ImageSpec("hall-shconv", "assets/images/shc/hall_SHconv.jpg", PHOTO_WIDTHS),
     ImageSpec("dongbang-grand-main", "assets/images/dongbang/db_hall.jpg", DONG_BANG_PHOTO_WIDTHS),
     ImageSpec("dongbang-grand-ceremony", "assets/images/dongbang/994A4437---.jpg", DONG_BANG_PHOTO_WIDTHS),
@@ -43,6 +45,33 @@ IMAGE_SPECS = (
     ImageSpec("shconv-photo-6", "assets/images/shc/KakaoTalk_20260712_122805350_06.jpg", PHOTO_WIDTHS),
     ImageSpec("shconv-photo-7", "assets/images/shc/KakaoTalk_20260712_122805350_07.jpg", PHOTO_WIDTHS),
     ImageSpec("shconv-photo-8", "assets/images/shc/KakaoTalk_20260712_122805350_08.jpg", PHOTO_WIDTHS),
+) + tuple(
+    ImageSpec(
+        f"jsquare-photo-{index + 1}",
+        f"assets/images/jsquare/jsquare{index}.jpg",
+        PHOTO_WIDTHS,
+    )
+    for index in range(19)
+) + tuple(
+    ImageSpec(
+        f"mconv-photo-{index + 1}",
+        f"assets/images/mconv/mconv{index}.jpg",
+        PHOTO_WIDTHS,
+    )
+    for index in range(8)
+) + tuple(
+    ImageSpec(
+        f"therium-photo-{index + 1}",
+        source.relative_to(ROOT).as_posix(),
+        PHOTO_WIDTHS,
+    )
+    for index, source in enumerate(
+        sorted(
+            path
+            for path in (ROOT / "assets" / "images" / "rium").glob("*.jpg")
+            if path.name != "hall_rium.jpg"
+        )
+    )
 )
 
 
@@ -64,18 +93,48 @@ def main() -> None:
     for spec in IMAGE_SPECS:
         source_path = ROOT / spec.source
         if not source_path.is_file():
+            existing_variants = (
+                OUTPUT_DIR / f"{spec.slug}-{width}.{suffix}"
+                for width in spec.widths
+                for suffix in ("avif", "webp")
+            )
+            if all(path.is_file() for path in existing_variants):
+                print(f"Skipped {spec.slug}: source is missing, generated variants already exist")
+                continue
             raise FileNotFoundError(source_path)
 
         with Image.open(source_path) as opened:
             source = ImageOps.exif_transpose(opened).convert("RGB")
-            if max(spec.widths) > source.width:
+            source_limit = min(source.width, source.height) if spec.square_crop or spec.square_contain else source.width
+            if max(spec.widths) > source_limit:
                 raise ValueError(
-                    f"{spec.slug}: requested width exceeds source width {source.width}px"
+                    f"{spec.slug}: requested width exceeds source limit {source_limit}px"
                 )
 
             for width in spec.widths:
-                height = round(source.height * width / source.width)
-                resized = source.resize((width, height), Image.Resampling.LANCZOS)
+                if spec.square_crop:
+                    resized = ImageOps.fit(
+                        source,
+                        (width, width),
+                        method=Image.Resampling.LANCZOS,
+                        centering=(0.5, 0.5),
+                    )
+                elif spec.square_contain:
+                    background = ImageOps.fit(
+                        source,
+                        (width, width),
+                        method=Image.Resampling.LANCZOS,
+                        centering=(0.5, 0.5),
+                    ).filter(ImageFilter.GaussianBlur(radius=max(12, width // 32)))
+                    resized = ImageOps.contain(source, (width, width), Image.Resampling.LANCZOS)
+                    framed = background.copy()
+                    framed.paste(resized, ((width - resized.width) // 2, (width - resized.height) // 2))
+                    resized.close()
+                    background.close()
+                    resized = framed
+                else:
+                    height = round(source.height * width / source.width)
+                    resized = source.resize((width, height), Image.Resampling.LANCZOS)
 
                 for suffix, image_format in (("avif", "AVIF"), ("webp", "WEBP")):
                     destination = OUTPUT_DIR / f"{spec.slug}-{width}.{suffix}"
